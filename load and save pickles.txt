@@ -1,0 +1,25 @@
+##Pickles
+# save the model to disk
+filename = '../models/[name]'
+pickle.dump(model, open(filename, 'wb'))
+
+# load the model from disk
+loaded_model = pickle.load(open(filename, 'rb'))
+result = loaded_model.score(X_test, Y_test)
+print(result)
+
+##Keras
+How to save and load a model
+If you only have 10 seconds to read this guide, here's what you need to know.
+
+Saving a Keras model:
+
+
+model = ...  # Get model (Sequential, Functional Model, or Model subclass)
+model.save('path/to/location')
+Loading the model back:
+
+
+from tensorflow import keras
+model = keras.models.load_model('path/to/location')
+Now, let's look at the details.
